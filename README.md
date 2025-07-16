@@ -2,11 +2,11 @@
 
 Takes a list of datetimes and calculates QPS.
 
-The input file should be a simple list of datetimes in YYYY-MM-DD HH:ii:ss format, one per line. These can be quoted or not (for example, if the source was a csv).
+The input file should be a simple list of datetimes in `YYYY-MM-DD HH:ii:ss` or `YYYY/MM/DD HH:ii:ss` format, one per line. These can be optionally quoted (for example, if the source was a csv).
 
 This script can be useful when pulling specific logs not already tracked by monitoring systems, local logs, or even data files which contain datetimes. The date format is usually easy to extract via the `cut` command, or any sort of regex.
 
-Example format:
+Example with several formats:
 
 ```
 2024-12-29 00:03:08
@@ -23,7 +23,7 @@ Example format:
 2024-12-30 00:32:48
 ```
 
-The output is simply sent to stdout and gives the totals by day and totals by hour in x-y coordinates for easy graphing, and average and max for each of day, hour, minute, and second.
+The output is simply sent to stdout and gives the totals by day and totals by hour in x-y coordinates for easy graphing, and average and max for each unit of day, hour, minute, and second.
 
 ## Usage
 
